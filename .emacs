@@ -8,13 +8,14 @@
 (when (null package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages '(better-defaults
-                      idle-highlight-mode
+(defvar my-packages '(idle-highlight-mode
                       elisp-slime-nav paredit
                       smex scpaste parenface-plus
                       find-file-in-project magit
-                      clojure-mode
-                      cider))
+                      cider
+                      starter-kit
+                      starter-kit-bindings
+                      starter-kit-lisp))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))

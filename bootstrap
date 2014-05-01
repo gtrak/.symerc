@@ -5,7 +5,7 @@ set -e
 # Not really using these yet:
 PROJECT=$1
 
-sudo apt-get install -y emacs24 curl tree unzip zip mosh
+sudo apt-get install -y emacs24 curl tree unzip zip mosh openjdk-7-jdk
 
 cd $(dirname $0)
 
@@ -20,5 +20,5 @@ mkdir -p ~/bin
 
 sudo cp hub ~/bin
 
-sudo wget -qO ~/bin https://raw.github.com/technomancy/leiningen/stable/bin/lein
+wget -qO ~/bin/lein https://raw.github.com/technomancy/leiningen/stable/bin/lein
 chmod +x ~/bin/lein
