@@ -8,14 +8,12 @@
 (when (null package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages '(idle-highlight-mode
+(defvar my-packages '(better-defaults
+                      idle-highlight-mode
                       elisp-slime-nav paredit
                       smex scpaste parenface-plus
                       find-file-in-project magit
-                      cider
-                      starter-kit
-                      starter-kit-bindings
-                      starter-kit-lisp))
+                      cider))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -27,24 +25,6 @@
 
 (when (<= (display-color-cells) 8)
   (defun hl-line-mode () (interactive)))
-
-(eval-after-load 'erc
-  '(progn
-     (when (not (package-installed-p 'erc-hl-nicks))
-       (package-install 'erc-hl-nicks))
-     (require 'erc-spelling)
-     (require 'erc-services)
-     (require 'erc-truncate)
-     (require 'erc-hl-nicks)
-     (require 'notifications)
-     (erc-services-mode 1)
-     (erc-truncate-mode 1)
-     (setq erc-complete-functions '(erc-pcomplete erc-button-next))
-     (setq-default erc-ignore-list '("Lajla"))
-     (add-to-list 'erc-modules 'hl-nicks)
-     (add-to-list 'erc-modules 'spelling)
-     (set-face-foreground 'erc-input-face "dim gray")
-     (set-face-foreground 'erc-my-nick-face "blue")))
 
 ;;; bindings
 
