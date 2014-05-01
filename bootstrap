@@ -5,7 +5,7 @@ set -e
 # Not really using these yet:
 PROJECT=$1
 
-sudo apt-get install -y emacs24-nox curl tree unzip zip mosh
+sudo apt-get install -y emacs24 curl tree unzip zip mosh
 
 cd $(dirname $0)
 
@@ -16,6 +16,9 @@ cp .gitconfig ~
 cp .profile ~
 cp .tmux.conf ~
 
-sudo cp hub /usr/local/bin
+mkdir -p ~/bin
 
-sudo wget -qO /usr/local/bin/lein https://raw.github.com/technomancy/leiningen/stable/bin/lein
+sudo cp hub ~/bin
+
+sudo wget -qO ~/bin https://raw.github.com/technomancy/leiningen/stable/bin/lein
+chmod +x ~/bin/lein

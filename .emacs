@@ -14,8 +14,7 @@
                       smex scpaste parenface-plus
                       find-file-in-project magit
                       clojure-mode
-                      cider
-                      company-mode))
+                      cider))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
