@@ -1,6 +1,6 @@
 [user]
-    name = Phil Hagelberg
-    email = technomancy@gmail.com
+    name = Gary Trakhman
+    email = gary.trakhman@gmail.com
 [color]
     branch = auto
     diff = auto
@@ -15,4 +15,4 @@
 [heroku]
 	remote = heroku
 [github]
-	user = technomancy
+	user = gtrak
