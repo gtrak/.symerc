@@ -13,11 +13,16 @@
                       elisp-slime-nav paredit
                       smex scpaste parenface-plus
                       find-file-in-project magit
-                      cider))
+                      cider
+                      doremi
+                      doremi-cmd
+                      doremi-frm))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+(smex-initialize)
 
 (setq-default ispell-program-name "aspell")
 

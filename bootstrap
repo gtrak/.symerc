@@ -5,7 +5,15 @@ set -e
 # Not really using these yet:
 PROJECT=$1
 
+mkdir -p ~/bin
+sudo cp hub ~/bin
+
 sudo apt-get install -y emacs24 curl tree unzip zip mosh openjdk-7-jdk
+
+wget -qO ~/bin/lein https://raw.github.com/technomancy/leiningen/stable/bin/lein
+chmod +x ~/bin/lein
+
+sudo apt-get install -y emacs24
 
 cd $(dirname $0)
 
@@ -16,9 +24,3 @@ cp .gitconfig ~
 cp .profile ~
 cp .tmux.conf ~
 
-mkdir -p ~/bin
-
-sudo cp hub ~/bin
-
-wget -qO ~/bin/lein https://raw.github.com/technomancy/leiningen/stable/bin/lein
-chmod +x ~/bin/lein
