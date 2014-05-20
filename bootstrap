@@ -8,6 +8,7 @@ PROJECT=$1
 
 sudo apt-get install -y emacs24 curl tree unzip zip mosh openjdk-7-jdk
 
+mkdir -p ~/bin
 wget -qO ~/bin/lein https://raw.github.com/technomancy/leiningen/stable/bin/lein
 chmod +x ~/bin/lein
 
@@ -15,9 +16,8 @@ sudo apt-get install -y emacs24
 
 cd $(dirname $0)
 
-mkdir -p ~/bin
-sudo cp hub ~/bin
 
+sudo cp hub ~/bin
 
 cp .emacs ~
 cp .bashrc ~
